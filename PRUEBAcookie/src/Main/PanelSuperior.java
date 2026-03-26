@@ -14,10 +14,11 @@ public class PanelSuperior extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelSuperior() {
-		
+		ClicksAuto c=new ClicksAuto(PanelSuperior.this);
 		textField = new JTextField();
 		textField.setEditable(false);
 		add(textField);
+		add(c);
 		textField.setColumns(10);
 
 	}

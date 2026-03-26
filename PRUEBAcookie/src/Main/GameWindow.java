@@ -34,10 +34,14 @@ public class GameWindow extends JFrame {
 	 */
 	public GameWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setSize(1080, 720);
+		setLocationRelativeTo(null);
+		//setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setLayout(new BorderLayout(0, 0));
+		PanelMejoras m=new PanelMejoras();
+		contentPane.add(m,BorderLayout.EAST);
 		PanelSuperior p=new PanelSuperior();
 		contentPane.add(p,BorderLayout.NORTH);
 		Boton b=new Boton(p);
