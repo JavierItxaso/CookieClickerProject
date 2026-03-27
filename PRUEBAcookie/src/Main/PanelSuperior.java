@@ -23,7 +23,7 @@ public class PanelSuperior extends JPanel {
 
 	}
 	void Editar() {
-		textField.setText(""+Contadores.contador);
+		textField.setText(""+Contadores.getContador());
 	}
 	
 }

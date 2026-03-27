@@ -17,8 +17,8 @@ public class ClicksAuto extends JPanel {
 		click.addActionListener(e -> {
 		    new Thread(() -> {
 		        while(click.isSelected()) {
-		            Contadores.contador += 1;
-		            System.out.println(Contadores.contador);
+		        	Contadores.setContador(Contadores.getContador()+1);
+		            System.out.println(Contadores.getContador());
 		            p.Editar();
 		            try {
 		                Thread.sleep(1000);

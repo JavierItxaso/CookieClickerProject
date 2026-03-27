@@ -13,8 +13,8 @@ public class Boton extends JPanel {
 		JButton bot = new JButton("Galleta");
 		bot.setBackground(null);
 		bot.addActionListener(e -> {
-			Contadores.contador+=Contadores.cantidadporclick;
-			System.out.println(Contadores.contador);
+			Contadores.setContador(Contadores.getContador()+1);
+			System.out.println(Contadores.getContador());
 			p.Editar();
 			
 		});
