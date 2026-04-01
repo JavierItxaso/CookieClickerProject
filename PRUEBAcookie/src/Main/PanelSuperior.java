@@ -5,25 +5,22 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class PanelSuperior extends JPanel {
+    private static final long serialVersionUID = 1L;
+    private JTextField textField;
+    private ClicksAuto c;
 
-	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	
-
-	/**
-	 * Create the panel.
-	 */
-	public PanelSuperior() {
-		ClicksAuto c=new ClicksAuto(PanelSuperior.this);
-		textField = new JTextField();
-		textField.setEditable(false);
-		add(textField);
-		add(c);
-		textField.setColumns(10);
-
-	}
-	void Editar() {
-		textField.setText(""+Contadores.getContador());
-	}
-	
+    public PanelSuperior() {
+        textField = new JTextField();
+        textField.setEditable(false);
+        textField.setColumns(15);
+        textField.setText("0.0");
+        add(textField);
+        
+        c = new ClicksAuto(this);
+        add(c);
+    }
+    
+    public void Editar() {
+        textField.setText(String.format("%.1f", Contadores.getContador()));
+    }
 }

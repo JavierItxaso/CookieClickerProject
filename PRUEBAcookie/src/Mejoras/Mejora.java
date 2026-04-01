@@ -11,11 +11,12 @@ public abstract class Mejora {
 	protected String descripcion;
 	
 	//Constructor
-	public Mejora(String nombre,String descripcion ,int precio) {
-		setNombre(nombre);
-		setDescripcion(descripcion);
-		setPrecio(precio);
-		Contadores.setCantidadporclick(Contadores.getCantidadporclick()+this.cantidadPorSegundo);
+	public Mejora(String nombre, String descripcion, int precio) {
+	    setNombre(nombre);
+	    setDescripcion(descripcion);
+	    setPrecio(precio);
+	    // ELIMINA esta línea:
+	    // Contadores.setCantidadporclick(Contadores.getCantidadporclick()+this.cantidadPorSegundo);
 	}
 	
 	//Métodos abstractos

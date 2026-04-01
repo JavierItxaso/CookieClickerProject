@@ -2,50 +2,45 @@ package Main;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
 
 public class GameWindow extends JFrame {
 
-	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+    private static final long serialVersionUID = 1L;
+    private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GameWindow frame = new GameWindow();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    GameWindow frame = new GameWindow();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
-	/**
-	 * Create the frame.
-	 */
-	public GameWindow() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(1080, 720);
-		setLocationRelativeTo(null);
-		//setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.DARK_GRAY);
-		contentPane.setLayout(new BorderLayout(0, 0));
-		PanelMejoras m=new PanelMejoras();
-		contentPane.add(m,BorderLayout.EAST);
-		PanelSuperior p=new PanelSuperior();
-		contentPane.add(p,BorderLayout.NORTH);
-		Boton b=new Boton(p);
-		contentPane.add(b,BorderLayout.CENTER);
-		setContentPane(contentPane);
-	}
-
+    public GameWindow() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1080, 720);
+        setLocationRelativeTo(null);
+        contentPane = new JPanel();
+        contentPane.setBackground(Color.DARK_GRAY);
+        contentPane.setLayout(new BorderLayout(0, 0));
+        
+        PanelSuperior p = new PanelSuperior();
+        contentPane.add(p, BorderLayout.NORTH);
+        
+        PanelMejoras m = new PanelMejoras(p);  // Pasar PanelSuperior
+        contentPane.add(m, BorderLayout.EAST);
+        
+        Boton b = new Boton(p);
+        contentPane.add(b, BorderLayout.CENTER);
+        
+        setContentPane(contentPane);
+    }
 }
